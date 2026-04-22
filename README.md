@@ -1,40 +1,45 @@
-# BruteForce-Lab
+# 🔨 BruteForce Lab
 
-> Password Brute Force Simulation & Defense Testing
+> Credential Testing & Password Attack Research Toolkit | by **Shadow Core**
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
-
-## Overview
-
-BruteForce-Lab is a professional cybersecurity tool built for penetration testers, red teamers, and security researchers. It is designed to assist in authorized security assessments and research.
+![Python](https://img.shields.io/badge/Python-3.8+-blue?logo=python) ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ## Features
-
-- 🔍 **Recon Module** — Target discovery and information gathering
-- 💉 **Exploit Engine** — Modular attack simulation framework
-- 📊 **Reporting** — Automated findings documentation
-- 🛡️ **Defense Testing** — Validate your security controls
-- 🔐 **Stealth Mode** — Evasion and obfuscation techniques
+- 🔐 **SSH Brute Force** — Multi-threaded SSH credential testing
+- 📂 **FTP Brute Force** — FTP login brute force
+- 🌐 **HTTP Form Brute** — POST-based web login brute force
+- 📝 **Wordlist Generator** — Custom targeted wordlists (name + birth + leet)
+- #️⃣ **Hash Cracker** — Crack MD5 / SHA1 / SHA256 hashes
 
 ## Installation
 
 ```bash
-git clone https://github.com/Youssefzdb/Fhdhd
-cd BruteForce
+git clone https://github.com/Youssefzdb/bruteforce-lab
+cd bruteforce-lab
 pip install -r requirements.txt
 ```
 
 ## Usage
 
 ```bash
-python3 main.py --target <IP> --mode full
-python3 main.py --help
+# SSH brute force
+python3 main.py ssh --host 192.168.1.1 --users admin --wordlist rockyou.txt
+
+# FTP brute force
+python3 main.py ftp --host 192.168.1.1 --users users.txt --wordlist wordlist.txt
+
+# HTTP form brute force
+python3 main.py http --url http://target/login --users admin --wordlist wordlist.txt --fail-string "Invalid password"
+
+# Generate targeted wordlist
+python3 main.py wordlist --name shadow --birth 01011995 --extra hack cyber --output mylist.txt
+
+# Crack MD5 hash
+python3 main.py hash --hash 5f4dcc3b5aa765d61d8327deb882cf99 --type md5 --wordlist rockyou.txt
 ```
 
-## Disclaimer
+## ⚠️ Disclaimer
+For authorized penetration testing and security research only.
 
-> This tool is for authorized security testing and educational purposes only. Always obtain written permission before testing any target.
-
-## Author
-
-**Shadow Core** — Cybersecurity Specialist | Penetration Tester
+## 👤 Author
+**Shadow Core** | Penetration Tester
